@@ -1,0 +1,240 @@
+Perfect bhai 👍
+Neeche **WebRTC INTERVIEW Q&A** de raha hoon —
+✅ **Basic → Advanced**
+✅ **Short + crisp answers**
+✅ **Interview-ready language**
+👉 Tu directly **revise karke bol sakta hai**
+
+---
+
+# 🧠 WebRTC INTERVIEW Q&A (COMPLETE)
+
+---
+
+## 1️⃣ WebRTC kya hai?
+
+**Answer:**
+WebRTC (Web Real-Time Communication) ek browser technology hai jo **audio, video aur data real-time** me **peer-to-peer** transfer karne deta hai **without plugins**.
+
+---
+
+## 2️⃣ WebRTC ka core components kya hain?
+
+**Answer:**
+
+1. `getUserMedia()` – camera/mic access
+2. `RTCPeerConnection` – audio/video connection
+3. `RTCDataChannel` – data transfer
+
+---
+
+## 3️⃣ WebRTC peer-to-peer hai ya client-server?
+
+**Answer:**
+Media **peer-to-peer** hota hai,
+lekin **signaling server** (Socket.IO/WebSocket) use hota hai **offer/answer exchange** ke liye.
+
+---
+
+## 4️⃣ Signaling kya hota hai?
+
+**Answer:**
+Signaling ka kaam hai **offer, answer aur ICE candidates** exchange karna.
+WebRTC **signaling khud provide nahi karta**.
+
+---
+
+## 5️⃣ Offer / Answer kya hai?
+
+**Answer:**
+
+* **Offer:** Caller ka proposal (audio/video configuration)
+* **Answer:** Receiver ka response
+  Ye **SDP (Session Description Protocol)** format me hote hain.
+
+---
+
+## 6️⃣ SDP kya hota hai?
+
+**Answer:**
+SDP me media details hoti hain jaise:
+
+* codec
+* media type (audio/video)
+* network info
+
+---
+
+## 7️⃣ ICE kya hota hai?
+
+**Answer:**
+ICE (Interactive Connectivity Establishment) network ke **possible paths** find karta hai jisse peer-to-peer connection ban sake.
+
+---
+
+## 8️⃣ STUN aur TURN me difference?
+
+**Answer:**
+
+| STUN                 | TURN                  |
+| -------------------- | --------------------- |
+| Public IP batata hai | Media relay karta hai |
+| Free / fast          | Costly                |
+| Direct P2P           | Fallback option       |
+
+---
+
+## 9️⃣ TURN server kab use hota hai?
+
+**Answer:**
+Jab **direct P2P possible na ho** (strict NAT / firewall), tab TURN server use hota hai.
+
+---
+
+## 🔟 ICE candidate kya hota hai?
+
+**Answer:**
+ICE candidate ek **network address + port** hota hai jisse peer connect hota hai.
+
+---
+
+## 11️⃣ Media Socket.IO se kyu nahi bhejte?
+
+**Answer:**
+Kyuki media heavy hota hai.
+WebRTC **optimized real-time streaming** provide karta hai.
+
+---
+
+## 12️⃣ WebRTC me reconnection kaise hota hai?
+
+**Answer:**
+
+* Connection state detect karte hain
+* PeerConnection close karte hain
+* New offer/answer create karte hain
+* Optional: ICE restart
+
+---
+
+## 13️⃣ ICE Restart kya hota hai?
+
+**Answer:**
+Network change hone par ICE routes dubara generate karna = ICE restart.
+
+---
+
+## 14️⃣ Audio/Video mute kaise karte hain?
+
+**Answer:**
+Track ka `enabled = false` karte hain, connection close nahi karte.
+
+---
+
+## 15️⃣ Screen sharing kaise hoti hai?
+
+**Answer:**
+
+* `getDisplayMedia()` se screen stream
+* `replaceTrack()` se camera ko replace
+* Connection same rehta hai
+
+---
+
+## 16️⃣ replaceTrack() ka use?
+
+**Answer:**
+Live stream ko change karne ke liye **without breaking connection**.
+
+---
+
+## 17️⃣ pc.ontrack kya karta hai?
+
+**Answer:**
+Remote user ka audio/video receive karta hai.
+
+---
+
+## 18️⃣ pc.onicecandidate ka role?
+
+**Answer:**
+ICE candidates generate hote hi signaling server se bhejna.
+
+---
+
+## 19️⃣ WebRTC secure hai?
+
+**Answer:**
+Haan.
+WebRTC **DTLS + SRTP encryption** use karta hai.
+
+---
+
+## 20️⃣ WebRTC vs WebSocket?
+
+**Answer:**
+
+| WebRTC          | WebSocket      |
+| --------------- | -------------- |
+| Real-time media | Data only      |
+| Peer-to-peer    | Client-server  |
+| Low latency     | Higher latency |
+
+---
+
+## 21️⃣ WebRTC production challenges?
+
+**Answer:**
+
+* NAT / firewall issues
+* TURN server cost
+* Reconnect handling
+* Device compatibility
+
+---
+
+## 22️⃣ WebRTC me common bugs?
+
+**Answer:**
+
+* ICE candidates miss
+* `setRemoteDescription` bhoolna
+* PeerConnection re-create na karna
+* React re-render issues
+
+---
+
+## 23️⃣ Group call kaise banate ho?
+
+**Answer:**
+
+* Mesh (small groups)
+* SFU (large groups, eg: mediasoup)
+
+---
+
+## 24️⃣ SFU kya hota hai?
+
+**Answer:**
+SFU (Selective Forwarding Unit) server jo streams ko **forward karta hai**, process nahi karta.
+
+---
+
+## 25️⃣ Real apps ka flow (Zoom/Meet)?
+
+**Answer:**
+
+* WebRTC for media
+* WebSocket for signaling
+* SFU for scaling
+* TURN fallback
+* Auto reconnect
+
+---
+
+# 🏆 INTERVIEW ONE-LINER (GOLD)
+
+> **WebRTC enables secure, low-latency, peer-to-peer real-time communication using STUN/TURN, ICE and SDP, with signaling handled externally.**
+
+---
+
